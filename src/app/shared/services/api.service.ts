@@ -36,7 +36,7 @@ export class ApiService {
    * @description Muestra las 4 peliculas más aclamadas
    */
   topRated(): Observable<any> {
-    return this.http.get( `/movie/top_rated?api_key=${this.api_key}` );
+    return this.http.get( `movie/top_rated?api_key=${this.api_key}` );
   }
 
   /**
@@ -44,5 +44,12 @@ export class ApiService {
    */
   popularMovies(): Observable<any> {
     return this.http.get( `trending/movie/week?api_key=${this.api_key}` );
+  }
+
+  /**
+   * @description Realiza la busqueda de las peliculas según parametros
+   */
+  searchMovie(): Observable<any> {
+    return this.http.get( `search/movie` )
   }
 }
