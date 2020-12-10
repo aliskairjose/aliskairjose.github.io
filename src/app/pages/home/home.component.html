@@ -1,33 +1,32 @@
 <ngx-spinner></ngx-spinner>
 
-<div fxLayout="column" class="banner-most-popular">
+<div class="container">
+  <div fxLayout="column" class="banner-most-popular">
 
-  <section fxLayoutAlign="center center">
-    <div class="banner-info text-center">
-      <h1 class="font-weight-normal">{{ mostPopularMovie.title}}</h1>
-      <h3 class="sub-header font-weight-light">Más Popular</h3>
-    </div>
-    <div>
-      <img [src]="imgPath+mostPopularMovie.backdrop_path" class="banner-img">
-    </div>
-  </section>
+    <section fxLayoutAlign="center center">
+      <div class="banner-info text-center">
+        <h1 class="font-weight-normal">{{ mostPopularMovie.title}}</h1>
+        <h3 class="sub-header font-weight-light">Más Popular</h3>
+      </div>
+      <div>
+        <img [src]="imgPath+mostPopularMovie.backdrop_path" class="banner-img">
+      </div>
+    </section>
 
-  <section>
-    <div class="mx-3 mt-4">
-      <h5 class="sub-header font-weight-light">Películas populares</h5>
-    </div>
-  </section>
+    <section class="mx-3 mt-4">
+      <h5 class="mb-4 sub-header font-weight-light">Películas populares</h5>
+      <app-carousel [items]="tvShows"></app-carousel>
+    </section>
 
-  <section>
-    <div class="mx-3 mt-4">
-      <h5 class="sub-header font-weight-light">Series populares</h5>
-    </div>
-  </section>
+    <section class="mx-3 mt-4">
+      <h5 class="mb-4 sub-header font-weight-light">Series populares</h5>
+      <app-carousel [items]="movies"></app-carousel>
+    </section>
 
-  <section>
-    <div class="mx-3 mt-4 text-center">
-      <h5 class="sub-header font-weight-light">Las películas más aclamadas</h5>
-    </div>
-  </section>
+    <section class="text-center mt-5">
+      <h5 class="mb-4 sub-header font-weight-light">Las películas más aclamadas</h5>
+      <app-top-rated [items]="topRated"></app-top-rated>
+    </section>
 
+  </div>
 </div>

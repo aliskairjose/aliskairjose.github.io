@@ -14,8 +14,9 @@ import { environment } from '../../../environments/environment.prod';
 export class HomeComponent implements OnInit {
 
   movies: Movie[] = [];
-  tvShow: TV[] = [];
+  tvShows: TV[] = [];
   mostPopularMovie: Movie = {};
+  topRated: Movie[] = [];
   imgPath = environment.imgPath;
 
   constructor(
@@ -24,15 +25,17 @@ export class HomeComponent implements OnInit {
 
   ) {
     this.spinner.show();
-    forkJoin( [ this.api.popularMovies(), this.api.popularTv() ] ).subscribe( ( [ movieResponse, tvResponse ] ) => {
-      this.spinner.hide();
-      // console.log( movieResponse );
-      // console.log( tvResponse );
-      this.movies = [ ...movieResponse ];
-      this.tvShow = [ ...tvResponse ];
-      this.mostPopularMovie = this.movies[ 0 ];
-      console.log( this.mostPopularMovie );
-    } );
+    forkJoin( [ this.api.popularMovies(), this.api.popularTv(), this.api.topRated() ] )
+      .subscribe( ( [ movieResponse, tvResponse, topRatedResponse ] ) => {
+        this.spinner.hide();
+        // console.log( movieResponse );
+        // console.log( tvResponse );
+        console.log( topRatedResponse )
+        this.movies = [ ...movieResponse ];
+        this.tvShows = [ ...tvResponse ];
+        this.topRated = [ ...topRatedResponse ];
+        this.mostPopularMovie = this.movies[ 0 ];
+      } );
   }
 
   ngOnInit() {

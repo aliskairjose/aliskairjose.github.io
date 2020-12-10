@@ -1,0 +1,5 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  <div *ngFor="let item of items | slice:0:4" class="carousel-img">
+    <img [src]="imgPath+item.backdrop_path" alt="">
+  </div>
+</div>
