@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="space-around center">
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around center" fxLayoutAlign.xs="center">
   <div *ngFor="let item of items | slice:0:4" class="top-rated-img">
     <img [src]="imgPath+item.poster_path" alt="">
   </div>
