@@ -2,12 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment.prod';
+import { map } from 'rxjs/operators';
+import { Movie } from '../interfaces/movie.interface';
+import { TV } from '../interfaces/tv.interface';
 
 @Injectable( {
   providedIn: 'root'
 } )
 export class ApiService {
-  private api_key = environment.api_key;
+  private apiKey = environment.apiKey;
 
   constructor(
     private http: HttpService
@@ -22,8 +25,10 @@ export class ApiService {
   /**
    * @description Muestra la lista de las series de TV más populares
    */
-  popularTv(): Observable<any> {
-    return this.http.get( `tv/popular?api_key=${this.api_key}` );
+  popularTv(): Observable<TV[]> {
+    return this.http.get( `tv/popular?api_key=${this.apiKey}` ).pipe(
+      map( r => r.results )
+    );
   }
 
   /*
@@ -35,21 +40,25 @@ export class ApiService {
   /**
    * @description Muestra las 4 peliculas más aclamadas
    */
-  topRated(): Observable<any> {
-    return this.http.get( `movie/top_rated?api_key=${this.api_key}` );
+  topRated(): Observable<Movie[]> {
+    return this.http.get( `movie/top_rated?api_key=${this.apiKey}` ).pipe(
+      map( r => r.results )
+    );
   }
 
   /**
    * @description Muestra la lista de las peliculas más populares
    */
-  popularMovies(): Observable<any> {
-    return this.http.get( `trending/movie/week?api_key=${this.api_key}` );
+  popularMovies(): Observable<Movie[]> {
+    return this.http.get( `trending/movie/week?api_key=${this.apiKey}` ).pipe(
+      map( r => r.results )
+    );
   }
 
   /**
    * @description Realiza la busqueda de las peliculas según parametros
    */
   searchMovie(): Observable<any> {
-    return this.http.get( `search/movie` )
+    return this.http.get( `search/movie` );
   }
 }
