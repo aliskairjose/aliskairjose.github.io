@@ -4,18 +4,20 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TopRatedComponent } from './components/top-rated/top-rated.component';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule( {
-  declarations: [ CarouselComponent, TopRatedComponent ],
+  declarations: [ CarouselComponent, TopRatedComponent, SearchBarComponent ],
   imports: [
     CommonModule,
     FlexLayoutModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
   ],
   exports: [
     CommonModule,
     CarouselComponent,
-    TopRatedComponent
+    TopRatedComponent,
+    SearchBarComponent
   ],
   providers: [
     NgxSpinnerService

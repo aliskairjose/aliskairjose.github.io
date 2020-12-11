@@ -16,7 +16,6 @@ import { HttpInterceptor } from './shared/services/http-interceptor.service';
   declarations: [
     AppComponent,
     PagesComponent,
-    SearchBarComponent,
   ],
   imports: [
     SharedModule,
@@ -25,7 +24,7 @@ import { HttpInterceptor } from './shared/services/http-interceptor.service';
     NgxSpinnerModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptor, multi: true },
