@@ -1,0 +1,21 @@
+.details {
+  z-index: 1000;
+  // border: thin solid white;
+  position: relative;
+  bottom: 35vh;
+  height: 60vh;
+
+  .overview {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .generes {
+    position: absolute;
+    bottom: 5vh;
+  }
+
+  img {
+    height: 48vh;
+  }
+}
