@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../interfaces/movie.interface';
 import { environment } from '../../../../environments/environment.prod';
+import { Router } from '@angular/router';
 
 @Component( {
   selector: 'app-top-rated',
@@ -12,9 +13,14 @@ export class TopRatedComponent implements OnInit {
 
   @Input() items: Movie[] = [];
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
 
+  goDetail( id: number ): void {
+    this.router.navigate( [ `detail/movie/${id}` ] );
+  }
 }

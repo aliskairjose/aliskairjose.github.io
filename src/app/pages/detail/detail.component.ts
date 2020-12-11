@@ -34,8 +34,6 @@ export class DetailComponent implements OnInit {
       this.spinner.hide();
       this.isShowing = false;
       this.data = { ...response };
-      console.log( response );
-
     } );
   }
 

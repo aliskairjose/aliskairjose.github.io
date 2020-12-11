@@ -1,5 +1,7 @@
 <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around center" fxLayoutAlign.xs="center">
   <div *ngFor="let item of items | slice:0:4" class="top-rated-img">
-    <img [src]="imgPath+item.poster_path" alt="">
+    <div (click)="goDetail(item.id)">
+      <img [src]="imgPath+item.poster_path" alt="">
+    </div>
   </div>
 </div>
