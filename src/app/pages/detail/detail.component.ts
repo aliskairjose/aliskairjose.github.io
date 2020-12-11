@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../shared/services/api.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { TV } from '../../shared/interfaces/tv.interface';
+import { Movie } from '../../shared/interfaces/movie.interface';
+import { environment } from '../../../environments/environment.prod';
 
 @Component( {
   selector: 'app-detail',
@@ -9,6 +12,9 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: [ './detail.component.scss' ]
 } )
 export class DetailComponent implements OnInit {
+
+  data: Movie | TV = {};
+  imgPath = environment.imgPath;
 
   constructor(
     private api: ApiService,
@@ -23,9 +29,11 @@ export class DetailComponent implements OnInit {
   }
 
   private loadDetail( params: any ): void {
-    this.api.getDetail( params ).subscribe( movie => {
+    this.api.getDetail( params ).subscribe( response => {
       this.spinner.hide();
-      console.log( movie );
+      this.data = { ...response };
+      console.log( response );
+
     } );
   }
 

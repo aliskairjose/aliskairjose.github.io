@@ -9,13 +9,24 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p,
+body,
+label {
   color: $white-smoke;
 }
 
 .sub-header {
   color: $pink;
 }
+
+.sub-header-white-smoke {
+  color: $white-smoke;
+}
+.sub-header-white {
+  color: $white;
+}
+
 .banner-info {
   z-index: 1000;
   position: absolute;
