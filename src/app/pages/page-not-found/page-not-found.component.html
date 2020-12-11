@@ -1,0 +1,9 @@
+<div class="container">
+  <div fxLayout="column" fxLayoutAlign="center center" style="height: 100vh;">
+    <img src="../../../assets/img/logo.svg" alt="" class="w-25 mb-3">
+    <h1>Error {{ error.http_status}}</h1>
+    <h2>Ups!, ha ocurrido un error inesperado</h2>
+    <h3>{{ error.message }}</h3>
+    <button type="button" class="btn btn-danger mt-3 px-5" (click)="onClick()">Volver</button>
+  </div>
+</div>

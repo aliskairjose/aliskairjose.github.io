@@ -31,18 +31,7 @@ export class HttpInterceptor implements HttpInterceptor {
       } ),
       catchError( ( response: HttpErrorResponse ) => {
         this.spinner.hide();
-        switch ( response.status ) {
-          case 401:
-            break;
-          case 404:
-            break;
-          case 500:
-            // Manejor de error
-            break;
-          default:
-            break;
-        }
-
+        this.router.navigateByUrl( `/error-page/${response.error.status_code}` );
         return throwError( response );
       } )
     );

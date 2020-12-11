@@ -12,11 +12,13 @@ import { HomeComponent } from './home/home.component';
 import { PagesRoutingModule } from './pages.routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetailComponent } from './detail/detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule( {
   declarations: [
     HomeComponent,
-    DetailComponent
+    DetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     SharedModule,
