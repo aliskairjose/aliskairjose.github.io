@@ -20,9 +20,7 @@ export class DetailComponent implements OnInit {
   constructor(
     private api: ApiService,
     private route: ActivatedRoute,
-    private spinner: NgxSpinnerService,
   ) {
-    this.spinner.show();
     this.route.params.subscribe( params => this.loadDetail( params ) );
   }
 
@@ -31,7 +29,6 @@ export class DetailComponent implements OnInit {
 
   private loadDetail( params: any ): void {
     this.api.getDetail( params ).subscribe( response => {
-      this.spinner.hide();
       this.isShowing = false;
       this.data = { ...response };
     } );

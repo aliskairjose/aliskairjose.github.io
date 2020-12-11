@@ -22,13 +22,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private api: ApiService,
-    private spinner: NgxSpinnerService,
 
   ) {
-    this.spinner.show();
     forkJoin( [ this.api.popularMovies(), this.api.popularTv(), this.api.topRated() ] )
       .subscribe( ( [ movieResponse, tvResponse, topRatedResponse ] ) => {
-        this.spinner.hide();
         this.movies = [ ...movieResponse ];
         this.tvShows = [ ...tvResponse ];
         this.topRated = [ ...topRatedResponse ];

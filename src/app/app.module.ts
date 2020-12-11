@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { PagesComponent } from './pages/pages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpInterceptor } from './shared/services/http-interceptor.service';
 
 @NgModule( {
   declarations: [
@@ -26,7 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FlexLayoutModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptor, multi: true },
+  ],
   bootstrap: [ AppComponent ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 
