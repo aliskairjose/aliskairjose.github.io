@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   mostPopularMovie: Movie = {};
   topRated: Movie[] = [];
   imgPath = environment.imgPath;
+  isShowing = true;
 
   constructor(
     private api: ApiService,
@@ -32,6 +33,7 @@ export class HomeComponent implements OnInit {
         this.tvShows = [ ...tvResponse ];
         this.topRated = [ ...topRatedResponse ];
         this.mostPopularMovie = this.movies[ 0 ];
+        this.isShowing = false;
       } );
   }
 

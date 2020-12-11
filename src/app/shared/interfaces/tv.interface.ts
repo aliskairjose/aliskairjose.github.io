@@ -3,6 +3,7 @@ export interface TV {
   backdrop_path?: string;
   first_air_date?: string;
   genre_ids?: Array<number>;
+  genres?: Array<Genres>;
   name?: string;
   origin_country?: Array<string>;
   original_language?: string;
@@ -13,4 +14,9 @@ export interface TV {
   media_type?: string;
   vote_average?: number;
   vote_count?: number;
+}
+
+export interface Genres {
+  id?: number;
+  name?: string;
 }

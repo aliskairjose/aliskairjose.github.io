@@ -1,6 +1,6 @@
 <ngx-spinner></ngx-spinner>
 
-<div class="container">
+<div class="container" *ngIf="!isShowing">
   <div fxLayout="column">
     <section fxLayoutAlign="center center">
       <div class="banner-info text-center">
@@ -14,9 +14,9 @@
 
     <section fxLayout="row" class="mt-5">
       <div fxFlex="40%">a</div>
-      <div fxFlex="60%">
+      <div fxFlex="60%" class="px-5">
         <p>{{data.overview}}</p>
-        <div fxLayout="row" fxLayoutAlign="center space-between">
+        <div fxLayout="row" fxLayoutAlign="center space-between" class="mt-4">
           <div fxFlex="50%">
             <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-suit-heart-fill" fill="#DB3545"
               xmlns="http://www.w3.org/2000/svg">

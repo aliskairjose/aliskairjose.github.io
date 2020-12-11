@@ -15,6 +15,7 @@ export class DetailComponent implements OnInit {
 
   data: Movie | TV = {};
   imgPath = environment.imgPath;
+  isShowing = true;
 
   constructor(
     private api: ApiService,
@@ -31,6 +32,7 @@ export class DetailComponent implements OnInit {
   private loadDetail( params: any ): void {
     this.api.getDetail( params ).subscribe( response => {
       this.spinner.hide();
+      this.isShowing = false;
       this.data = { ...response };
       console.log( response );
 
