@@ -28,9 +28,6 @@ export class HomeComponent implements OnInit {
     forkJoin( [ this.api.popularMovies(), this.api.popularTv(), this.api.topRated() ] )
       .subscribe( ( [ movieResponse, tvResponse, topRatedResponse ] ) => {
         this.spinner.hide();
-        // console.log( movieResponse );
-        // console.log( tvResponse );
-        console.log( topRatedResponse )
         this.movies = [ ...movieResponse ];
         this.tvShows = [ ...tvResponse ];
         this.topRated = [ ...topRatedResponse ];

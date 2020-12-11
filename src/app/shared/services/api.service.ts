@@ -16,6 +16,15 @@ export class ApiService {
     private http: HttpService
   ) { }
 
+
+  /**
+   * @description Muestra el detalle de la película o show de tv consultada
+   * @param Id de la película o show a consultar
+   */
+  getDetail( params: any ): Observable<TV | Movie> {
+    return this.http.get( `${params.type}/${params.id}?api_key=${this.apiKey}` );
+  }
+
   /*
   ---------------------------------------------
   ---------------  TV  ------------------------

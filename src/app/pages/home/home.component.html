@@ -15,12 +15,12 @@
 
     <section class="mx-3 mt-4">
       <h5 class="mb-4 sub-header font-weight-light">Películas populares</h5>
-      <app-carousel [items]="tvShows"></app-carousel>
+      <app-carousel [items]="movies" [type]="'movie'"></app-carousel>
     </section>
 
     <section class="mx-3 mt-4">
       <h5 class="mb-4 sub-header font-weight-light">Series populares</h5>
-      <app-carousel [items]="movies"></app-carousel>
+      <app-carousel [items]="tvShows" [type]="'tv'"></app-carousel>
     </section>
 
     <section class="text-center mt-5 mb-5">

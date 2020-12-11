@@ -11,10 +11,12 @@ import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { PagesRoutingModule } from './pages.routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule( {
   declarations: [
-    HomeComponent
+    HomeComponent,
+    DetailComponent
   ],
   imports: [
     SharedModule,
