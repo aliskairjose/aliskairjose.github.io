@@ -1,4 +1,5 @@
 .details {
+  padding: 0 1.5rem;
   z-index: 1000;
   // border: thin solid white;
   position: relative;
@@ -8,6 +9,7 @@
   .overview {
     position: absolute;
     bottom: 0;
+    margin-right: 5rem;
   }
 
   .generes {
@@ -17,5 +19,31 @@
 
   img {
     height: 48vh;
+  }
+}
+
+@media (max-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .details {
+    z-index: 1000;
+    // border: thin solid white;
+    position: initial;
+    height: 60vh;
+
+    .overview {
+      position: initial;
+      bottom: 0;
+      margin-right: 0;
+    }
+
+    .generes {
+      margin: 20px 0;
+      position: initial;
+    }
+
+    img {
+      height: 48vh;
+      display: none;
+    }
   }
 }
