@@ -3,7 +3,8 @@ import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
-  BreakPointRegistry, DefaultFlexAlignDirective, FlexAlignStyleBuilder, FlexFillDirective, FlexFillStyleBuilder, FlexLayoutModule, FlexStyleBuilder, LayoutAlignStyleBuilder,
+  BreakPointRegistry, DefaultFlexAlignDirective, DefaultLayoutGapDirective, FlexAlignStyleBuilder, FlexFillDirective, FlexFillStyleBuilder, FlexLayoutModule, FlexStyleBuilder, LayoutAlignStyleBuilder,
+  LayoutGapStyleBuilder,
   LayoutStyleBuilder, MediaMarshaller, PrintHook, StylesheetMap, StyleUtils, ɵMatchMedia
 } from '@angular/flex-layout';
 
@@ -15,6 +16,7 @@ import { DetailComponent } from './detail/detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FormsModule } from '@angular/forms';
 import { ResultComponent } from './result/result.component';
+import { Directionality } from '@angular/cdk/bidi';
 
 @NgModule( {
   declarations: [
@@ -35,6 +37,8 @@ import { ResultComponent } from './result/result.component';
   exports: [],
   providers: [
     DefaultFlexAlignDirective,
+    LayoutGapStyleBuilder,
+    Directionality,
     FlexAlignStyleBuilder,
     FlexFillDirective,
     FlexFillStyleBuilder,

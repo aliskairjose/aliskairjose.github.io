@@ -5,14 +5,17 @@
       <h5 class="mb-4 sub-header font-weight-light">Resultados de la búsqueda</h5>
     </div>
   </div>
-  <!-- <div fxLayout="row" fxLayoutAlign="space-evenly stretch">
-    <div class="text-danger mx-3" *ngFor="let movie of movies | slice:0:3" fxFlex="50">
-      <app-movie-card [data]="movie"></app-movie-card>
-    </div>
-  </div> -->
-  <div class="row row-cols-1 row-cols-md-3">
+  <!-- <div class="row row-cols-1 row-cols-md-3">
     <div class="col mb-4" *ngFor="let movie of movies">
       <app-movie-card [data]="movie"></app-movie-card>
     </div>
+  </div> -->
+
+  <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+    <ng-container *ngFor="let movie of movies">
+      <div fxFlex="0 1 calc(33.3% - 32px)" class="mb-5">
+        <app-movie-card [data]="movie"></app-movie-card>
+      </div>
+    </ng-container>
   </div>
 </div>
