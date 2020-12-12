@@ -1,4 +1,4 @@
-<div class="card card-inverse card-info">
+<div class="card card-inverse card-info" (click)="movieDetail(data.id)">
   <img class="card-img-top" [src]="imgPath+data.poster_path">
   <div class="card-body">
     <h4 class="card-title">{{data.title}}</h4>

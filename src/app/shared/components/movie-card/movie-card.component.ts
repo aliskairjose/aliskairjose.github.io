@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../../interfaces/movie.interface';
 import { environment } from '../../../../environments/environment.prod';
+import { Router } from '@angular/router';
 
 @Component( {
   selector: 'app-movie-card',
@@ -12,9 +13,15 @@ export class MovieCardComponent implements OnInit {
 
   @Input() data: Movie = {};
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  movieDetail( id: number ): void {
+    this.router.navigate( [ `detail/movie/${id}` ] );
   }
 
 }
