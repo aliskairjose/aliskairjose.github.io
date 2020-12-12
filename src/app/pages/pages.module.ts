@@ -3,7 +3,7 @@ import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {
-  BreakPointRegistry, FlexFillDirective, FlexFillStyleBuilder, FlexLayoutModule, FlexStyleBuilder, LayoutAlignStyleBuilder,
+  BreakPointRegistry, DefaultFlexAlignDirective, FlexAlignStyleBuilder, FlexFillDirective, FlexFillStyleBuilder, FlexLayoutModule, FlexStyleBuilder, LayoutAlignStyleBuilder,
   LayoutStyleBuilder, MediaMarshaller, PrintHook, StylesheetMap, StyleUtils, ɵMatchMedia
 } from '@angular/flex-layout';
 
@@ -34,6 +34,8 @@ import { ResultComponent } from './result/result.component';
   ],
   exports: [],
   providers: [
+    DefaultFlexAlignDirective,
+    FlexAlignStyleBuilder,
     FlexFillDirective,
     FlexFillStyleBuilder,
     NgxSpinnerService,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../shared/services/api.service';
+import { Movie } from '../../shared/interfaces/movie.interface';
 
 @Component( {
   selector: 'app-result',
@@ -8,6 +9,8 @@ import { ApiService } from '../../shared/services/api.service';
   styleUrls: [ './result.component.scss' ]
 } )
 export class ResultComponent implements OnInit {
+
+  movies: Movie[] = [];
 
   constructor(
     private api: ApiService,
@@ -19,7 +22,7 @@ export class ResultComponent implements OnInit {
   }
 
   private search( query: string ): void {
-    this.api.searchMovie( query ).subscribe( result => console.log( result ) );
+    this.api.searchMovie( query ).subscribe( res => this.movies = [ ...res.results ] );
   }
 
 }

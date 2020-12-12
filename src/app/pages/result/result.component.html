@@ -1,1 +1,13 @@
-<p>result works! {{query}}</p>
+<app-search-bar></app-search-bar>
+<div class="container">
+  <div fxLayout="column" fxLayoutAlign="center center" class="mt-5">
+    <div class="mt-5">
+      <h5 class="mb-4 sub-header font-weight-light">Resultados de la búsqueda</h5>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-around start">
+    <div class="text-danger mx-3" *ngFor="let movie of movies | slice:0:3" fxFlex="50">
+      <app-movie-card [data]="movie"></app-movie-card>
+    </div>
+  </div>
+</div>

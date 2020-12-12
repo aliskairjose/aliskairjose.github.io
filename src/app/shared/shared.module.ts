@@ -6,9 +6,16 @@ import { TopRatedComponent } from './components/top-rated/top-rated.component';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MovieCardComponent } from './components/movie-card/movie-card.component';
 
 @NgModule( {
-  declarations: [ CarouselComponent, TopRatedComponent, SearchBarComponent ],
+  declarations: [
+    CarouselComponent,
+    TopRatedComponent,
+    SearchBarComponent,
+    MovieCardComponent,
+    MovieCardComponent
+  ],
   imports: [
     CommonModule,
     FlexLayoutModule,
@@ -20,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     CarouselComponent,
     TopRatedComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    MovieCardComponent
   ],
   providers: [
     NgxSpinnerService
