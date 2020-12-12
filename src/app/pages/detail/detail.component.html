@@ -34,14 +34,17 @@
             <p>{{data.overview}}</p>
             <div fxLayout="row" fxLayoutAlign="center space-between" class="mt-4">
               <div fxFlex="50%" fxFlex.xs="70%">
-                <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-suit-heart-fill" fill="#DB3545"
+                <!-- <svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-suit-heart-fill" fill="#DB3545"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
-                </svg>
-                <label class="ml-2">Agregar a favoritas</label>
+                </svg> -->
+                <button type="button" class="btn btn-link ml-2" (click)="addFavorite(data)">
+                  <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+                  Agregar a favoritas
+                </button>
               </div>
-              <div fxFlex="50%" fxFlex.xs="30%" fxLayoutAlign="end">
+              <div fxFlex=" 50%" fxFlex.xs="30%" fxLayoutAlign="end">
                 <a href="javascript:history.back()" type="button" class="btn btn-danger">Regresar</a>
               </div>
             </div>

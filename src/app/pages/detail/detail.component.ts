@@ -5,6 +5,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TV } from '../../shared/interfaces/tv.interface';
 import { Movie } from '../../shared/interfaces/movie.interface';
 import { environment } from '../../../environments/environment.prod';
+import { StorageService } from '../../shared/services/storage.service';
 
 @Component( {
   selector: 'app-detail',
@@ -20,11 +21,15 @@ export class DetailComponent implements OnInit {
   constructor(
     private api: ApiService,
     private route: ActivatedRoute,
+    private storage: StorageService,
   ) {
     this.route.params.subscribe( params => this.loadDetail( params ) );
   }
 
   ngOnInit() {
+  }
+
+  addFavorite( movie: Movie ): void {
   }
 
   private loadDetail( params: any ): void {

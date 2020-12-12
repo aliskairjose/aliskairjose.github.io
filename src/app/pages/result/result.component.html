@@ -14,7 +14,7 @@
     </ng-container>
   </div>
 
-  <div fxLayout="row">
+  <div fxLayout="row" fxLayoutAlign="center center">
     <ngb-pagination [collectionSize]="totalResult" [(page)]="page" [maxSize]="10" [boundaryLinks]="true"
       (pageChange)="pageChange($event)">
     </ngb-pagination>
