@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment.prod';
 import { map } from 'rxjs/operators';
 import { Movie } from '../interfaces/movie.interface';
 import { TV } from '../interfaces/tv.interface';
+import { SearchResponse } from '../interfaces/search-reponse.interface';
 
 @Injectable( {
   providedIn: 'root'
@@ -66,8 +67,10 @@ export class ApiService {
 
   /**
    * @description Realiza la busqueda de las peliculas según parametros
+   * @param query cadena de busqueda
+   * @param page número de pagina a mostrar
    */
-  searchMovie(): Observable<any> {
-    return this.http.get( `search/movie` );
+  searchMovie( query: string, page = 1 ): Observable<SearchResponse> {
+    return this.http.get( `search/movie?api_key=${this.apiKey}&query=${query}&page=${page}` );
   }
 }

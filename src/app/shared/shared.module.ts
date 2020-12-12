@@ -5,6 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { TopRatedComponent } from './components/top-rated/top-rated.component';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule( {
   declarations: [ CarouselComponent, TopRatedComponent, SearchBarComponent ],
@@ -12,6 +13,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     CommonModule,
     FlexLayoutModule,
     NgxSpinnerModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     CommonModule,

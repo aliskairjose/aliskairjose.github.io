@@ -13,12 +13,15 @@ import { PagesRoutingModule } from './pages.routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetailComponent } from './detail/detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FormsModule } from '@angular/forms';
+import { ResultComponent } from './result/result.component';
 
 @NgModule( {
   declarations: [
     HomeComponent,
     DetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ResultComponent
   ],
   imports: [
     SharedModule,
@@ -27,6 +30,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PagesRoutingModule,
     FlexLayoutModule,
     NgbModule,
+    FormsModule
   ],
   exports: [],
   providers: [

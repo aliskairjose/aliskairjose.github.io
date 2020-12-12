@@ -2,7 +2,9 @@
 
 <!-- <div class="container" *ngIf="!isShowing"> -->
 <div fxLayout="column" *ngIf="!isShowing">
+  <app-search-bar></app-search-bar>
   <section fxLayoutAlign="center center">
+
     <div>
       <img [src]="imgPath+data.backdrop_path" class="banner-img">
     </div>

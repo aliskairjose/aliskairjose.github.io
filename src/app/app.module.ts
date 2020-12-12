@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { PagesComponent } from './pages/pages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpInterceptor } from './shared/services/http-interceptor.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule( {
   declarations: [
@@ -25,6 +26,7 @@ import { HttpInterceptor } from './shared/services/http-interceptor.service';
     BrowserAnimationsModule,
     FlexLayoutModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptor, multi: true },
