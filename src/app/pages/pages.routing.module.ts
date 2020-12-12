@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ResultComponent } from './result/result.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 const routes: Routes = [
   {
@@ -18,8 +19,12 @@ const routes: Routes = [
     path: 'detail/:type/:id',
     component: DetailComponent
   }, {
-    path: 'result/:query',
+    path: 'result',
     component: ResultComponent
+  },
+  {
+    path: 'favorites',
+    component: FavoritesComponent
   }
 ];
 

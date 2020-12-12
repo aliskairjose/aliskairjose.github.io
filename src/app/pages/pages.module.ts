@@ -17,13 +17,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FormsModule } from '@angular/forms';
 import { ResultComponent } from './result/result.component';
 import { Directionality } from '@angular/cdk/bidi';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule( {
   declarations: [
     HomeComponent,
     DetailComponent,
     PageNotFoundComponent,
-    ResultComponent
+    ResultComponent,
+    FavoritesComponent
   ],
   imports: [
     SharedModule,

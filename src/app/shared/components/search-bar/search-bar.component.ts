@@ -24,7 +24,8 @@ export class SearchBarComponent implements OnInit {
 
   onSubmit(): void {
     const query = this.searchForm.value.query;
-    this.router.navigateByUrl( `result/${query}` );
+    // this.router.navigateByUrl( `result/${query}` );
+    this.router.navigate( [ '/result' ], { queryParams: { movie: query, page: 1 } } );
   }
 
   private createForm(): void {

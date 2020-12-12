@@ -13,4 +13,11 @@
       </div>
     </ng-container>
   </div>
+
+  <div fxLayout="row">
+    <ngb-pagination [collectionSize]="totalResult" [(page)]="page" [maxSize]="10" [boundaryLinks]="true"
+      (pageChange)="pageChange($event)">
+    </ngb-pagination>
+  </div>
+
 </div>
